@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+body {
+    font-family: 'Montserrat';
+    /* background-image: url(/image/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 350vh;
+
+}
+
+/* -------------------------SETTINGS------------------------------------------ */
+
+
+.settings {
+    display: none;
+    flex-direction: column;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 95vh;
+    background-color: rgba(0, 0, 0, 0.58);
+
+
+}
+
+.settings h3 {
+    color: white;
+    margin-bottom: 24px;
+}
+
+.inputSettings {
+    width: 150px;
+
+}
+
+.settings label {
+    color: white;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+}
+
+.form label {
+    margin-left: -60px;
+}
+
+.settings span {
+    margin: 12px auto;
+    padding: 4px;
+}
+
+#reset {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+#generate {
+    background-color: #37AE36;
+    color: white;
+    font-weight: bold;
+}
+
+.settings p {
+    color: white;
+}
+
+.settings a {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------SETTINGS END --------------------------------------- */
+
+/* ---------------------------PUBLIC--------------------------------------------- */
+.public {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Montserrat';
+    background-color: #8DB3C6;
+    padding: 16px;
+    display: grid;
+    grid-template-rows: 1.5fr 0.8fr 4fr 1fr;
+    position: relative;
+    margin-top: -16px;
+}
+
+.logo {
+    width: 50%;
+    height: 100%;
+}
+
+.logo img {
+    width: 30%;
+
+
+}
+
+.judul {
+    width: 100%;
+    height: 30px;
+    margin-top: 8px;
+}
+
+.judul h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: 0.45fr 0.9fr;
+    margin-top: 12px;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    height: 410px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+}
+
+.barcode {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.barcode img {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    margin: 12px auto;
+}
+
+.div-biodata {
+    display: grid;
+    grid-template-rows: 2fr 0.5fr;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+}
+
+table {
+    table-layout: fixed;
+}
+
+table td {
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.pengumuman {
+    width: 100%;
+    height: 40px;
+    background-color: #5CB0CE;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 0px;
+    color: white;
+
+    cursor: pointer;
+}
+
+.colon {
+    margin-right: 4px;
+    margin-left: 4px;
+    width: 12px;
+}
+
+.button {
+    position: relative;
+    bottom: 0;
+    width: 304%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #37AE36;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: red;
+}
+
+.button a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#a {
+    text-decoration: none;
+    color: rgb(0, 102, 255);
+
+}
+
+
+/* -------------Public Mobile Break Point------------ */
+
+@media (max-width: 576px) {
+    body{
+        background-image: none;
+        margin: 0;
+        padding: 0;
+        background: RGB(136, 159, 205);
+        background: linear-gradient(90deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%);
+        height: 100vh;
+        z-index: 10;
+
+    }
+
+    .public {
+        display: none;
+    }
+
+    .public-mobile {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999999999;
+        
+    }
+
+    .public-mobile-logo{
+        display: flex;
+    }
+
+    .public-mobile-logo img{
+        width: 50%;
+        height: 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------PUBLIC END------------------------------------------- */
