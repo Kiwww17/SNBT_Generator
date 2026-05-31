@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!-- Settings End -->
+    <!-- Settings -->
     <div class="settings" id="settings">
         <h3>PENGUMUMAN LOLOS SNBT GENERATOR 2026</h3>
         <label>Nomor Peserta : </label>
@@ -71,7 +71,60 @@
     </div>
     <!-- Settings End -->
 
-    <!-- Public End -->
+
+    <!-- Settings Mobile -->
+    <div class="settings-mobile" id="settings-mobile">
+        <div class="settings-mobile-data">
+            <h3>SNBT GENERATOR 2026</h3>
+            <ul>
+                <li>
+                    <label>Nomor peserta : <input type="text" id="mb-no"></label>
+                </li>
+                <li>
+                    <label>Nama peserta : <input type="text" id="mb-nm"></label>
+                </li>
+                <li>
+                    <label>Tanggal lahir : <input type="text" id="mb-dt"></label>
+                </li>
+                <li>
+                    <label>Bulan lahir : <input type="text" id="mb-mo"></label>
+                </li>
+                <li>
+                    <label>Tahun lahir : <input type="text" id="mb-yr"></label>
+                </li>
+                <li>
+                    <label>Kode PTN : <input type="text" id="mb-cc"></label>
+                </li>
+                <li>
+                    <label>Nama PTN : <input type="text" id="mb-cn"></label>
+                </li>
+                <li>
+                    <label>Kode PRODI : <input type="text" id="mb-mc"></label>
+                </li>
+                <li>
+                    <label>Nama PRODI : <input type="text" id="mb-mn"></label>
+                </li>
+            </ul>
+        </div>
+        <form class="mb-form">
+            <p>Tingkat pendidikan</p>
+            <br>
+            <label for="mb-sarjana"><input class="mb-inputSettings" type="radio" name="mbTingkat pendidikan" value="Sarjana" id="mb-sarjana">Sarjana</label>
+            <label for="mb-sarjanaterapan"><input class="mb-inputSettings" type="radio" name="mbTingkat pendidikan" value="Sarjana Terapan" id="mb-sarjanaterapan">Sarjana Terapan</label>
+        </form>
+        <div class="settings-mobile-button">
+            <ul>
+                <li><button id="mb-gen-btn">GENERATE</button></li>
+                <li><button id="mb-res-btn">RESET</button></li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p><b>FOLLOW <a href="https://github.com/Kiwww17">github.com/Kiwww17</a></b></p>
+        </div>
+    </div>
+    <!-- Settings Mobile End -->
+
+    <!-- Public  -->
     <div class="public" id="public">
 
         <div class="logo">
@@ -92,17 +145,17 @@
                         <tr>
                             <td>Nomor peserta</td>
                             <td class="colon">:</td>
-                            <td ><b id="pub-nomorPeserta">12-12345-123456</b></td>
+                            <td ><b id="pub-nomorPeserta"></b></td>
                         </tr>
                         <tr>
                             <td>Nama peserta</td>
                             <td class="colon">:</td>
-                            <td ><b id="pub-namaPeserta">RIZKY WIMA RADITYA MAHARDIKA</b></td>
+                            <td ><b id="pub-namaPeserta"></b></td>
                         </tr>
                         <tr>    
                             <td>Tanggal lahir</td>
                             <td class="colon">:</td>
-                            <td ><b id="pub-tglPeserta">02 - Agustus - 2008</b></td>
+                            <td ><b id="pub-tglPeserta"></b></td>
                         </tr>
                         <tr>
                             <td colspan="3">
@@ -121,12 +174,12 @@
                         <tr>
                             <td>PTN</td>
                             <td class="colon">:</td>
-                            <td ><b id="pub-kodeNamaPTN">123456-INSTITUT TEKNOLOGI BANDUNG</b></td>
+                            <td ><b id="pub-kodeNamaPTN"></b></td>
                         </tr>
                         <tr>
                             <td>Program studi</td>
                             <td class="colon">:</td>
-                            <td ><b id="pub-kodeNamaProdiTp">12345678-TEKNIK INFORMATIKA (Sarjana)</b></td>
+                            <td ><b id="pub-kodeNamaProdiTp"></b></td>
                         </tr>
                         <tr>
                             <td colspan="3">
@@ -163,8 +216,8 @@
 
 
 
-    <!-- Mobile Layout -->
-    <div class="public-mobile">
+    <!-- Mobile Public Layout -->
+    <div class="public-mobile" id="public-mobile">
         <div class="public-mobile-logo">
             <img src="/image/logo-snpmb.png" alt="logo-snpmb">
         </div>
@@ -184,21 +237,21 @@
                         <p>Nomor peserta : </p>
                     </li>
                     <li>
-                        <p><b id="pub-nomorPeserta"></b></p>
+                        <p><b id="mb-pub-nomorPeserta"></b></p>
                     </li>
 
                     <li>
                         <p>Nama peserta : </p>
                     </li>
                     <li>
-                        <p><b id="pub-namaPeserta"></b></p>
+                        <p><b id="mb-pub-namaPeserta"></b></p>
                     </li>
 
                     <li>
                         <p>Tanggal lahir : </p>
                     </li>
                     <li>
-                        <p id="pub-tglPeserta"></p>
+                        <p id="mb-pub-tglPeserta"></p>
                     </li>
 
                     <li id="selamat">
@@ -210,14 +263,14 @@
                         <p>PTN :</p>
                     </li>
                     <li>
-                        <p><b id="pub-kodeNamaPTN"></b></p>
+                        <p><b id="mb-pub-kodeNamaPTN"></b></p>
                     </li>
 
                     <li>
                         <p>Program Studi : </p>
                     </li>
                     <li id="namaPTN">
-                        <p><b id="pub-kodeNamaProdiTp"></b></p>
+                        <p><b id="mb-pub-kodeNamaProdiTp"></b></p>
                     </li>
 
                     <li id="syarat">
@@ -233,7 +286,7 @@
             <div class="unduh">
                 <p>UNDUH PENGUMUMAN KETUA SNPMB (PDF)</p>
             </div>
-            <div class="kembali" id="button" title="klik untuk kembali ke section sebelumnya">
+            <div class="kembali" id="mb-button" title="klik untuk kembali ke section sebelumnya">
                 <p>Kembali ke pencarian</p>
             </div>
         </div>

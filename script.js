@@ -47,7 +47,7 @@ generate.onclick = () => {
         alert('Maaf terdapat kesalahan saat mengisi data!, Silahkan ulangi kembali')
         state = false;
 
-    }else if (namaPeserta == "debugging"){
+    } else if (namaPeserta == "debugging") {
         pub_nomorPeserta.textContent = nomorPeserta;
         pub_namaPeserta.textContent = namaPeserta;
         pub_tglPeserta.textContent = tglLahir + ' - ' + blnLahir[0].toUpperCase() + blnLahir.slice(1, blnLahir.length) + ' - ' + thnLahir;
@@ -58,10 +58,15 @@ generate.onclick = () => {
         public.style.display = 'grid';
         settings.style.display = 'none';
         state = true;
-        body.style.paddinTop = '0';
+        body.style.paddingTop = '0';
         body.style.paddingBottom = '0';
         body.style.paddingLeft = '0';
         body.style.paddingRight = '0';
+        body.style.height = '100vh';
+        body.style.width = '100%';
+        body.style.overflow = 'hidden';
+        body.style.backgroundImage = 'none';
+
     } else {
 
         pub_nomorPeserta.textContent = nomorPeserta;
@@ -71,13 +76,17 @@ generate.onclick = () => {
         pub_kodeNamaPTN.textContent = kodePTN + ' - ' + namaPTN;
         pub_kodeNamaProdiTp.textContent = kodeProdi + ' - ' + namaProdi + '  (' + tingkatPendidikan + ')'
 
-        public.style.display = 'grid';
+        public.style.display = 'flex';
         settings.style.display = 'none';
         state = true;
-        body.style.paddinTop = '0';
+        body.style.paddingTop = '0';
         body.style.paddingBottom = '0';
         body.style.paddingLeft = '0';
         body.style.paddingRight = '0';
+        body.style.height = '100vh';
+        body.style.width = '100%';
+        body.style.overflow = 'hidden';
+        body.style.backgroundImage = 'none';
 
     }
 
@@ -87,7 +96,7 @@ generate.onclick = () => {
         }, 3000);
 
     } else {
-        
+
     }
 
 }
@@ -102,9 +111,119 @@ const button = document.getElementById('button');
 
 button.addEventListener('click', function () {
     const public = document.getElementById('public');
-
     const settings = document.getElementById('settings');
+    const body = document.body
 
+    body.style.display='flex';
+    body.style.padding='16px'
+    body.style.backgroundImage='url(/image/background.jpg)'
     public.style.display = 'none';
     settings.style.display = 'flex';
+    settings.style.background = 'rgba(0, 0, 0, 0.58)';
 })
+
+//-----------Mobile Generate------------------------//
+const generateMobile = document.getElementById('mb-gen-btn');
+
+generateMobile.onclick = () => {
+    let mbNumber = document.getElementById('mb-no').value;
+    let mbName = document.getElementById('mb-nm').value;
+    let mbDate = document.getElementById('mb-dt').value;
+    let mbMonth = document.getElementById('mb-mo').value;
+    let mbYear = document.getElementById('mb-yr').value;
+    let mbCcode = document.getElementById('mb-cc').value;
+    let mbCname = document.getElementById('mb-cn').value;
+    let mbMcode = document.getElementById('mb-mc').value;
+    let mbMname = document.getElementById('mb-mn').value;
+
+    let tingkatPendidikan = document.querySelector('input[name="mbTingkat pendidikan"]:checked')?.value;
+
+    const body = document.body;
+    ///////////
+    console.log(mbNumber);
+    console.log(mbName);
+    console.log(mbDate);
+    console.log(mbMonth);
+    console.log(mbYear);
+    console.log(mbCcode);
+    console.log(mbCname);
+    console.log(mbMcode);
+    console.log(mbMname);
+    console.log(tingkatPendidikan);
+    const mNomorP = document.getElementById('mb-pub-nomorPeserta');
+    const mNamaP = document.getElementById('mb-pub-namaPeserta');
+    const mTanggalP = document.getElementById('mb-pub-tglPeserta');
+    const mNamaPt = document.getElementById('mb-pub-kodeNamaPTN');
+    const mNamaPr = document.getElementById('mb-pub-kodeNamaProdiTp');
+
+    const mbPublic = document.getElementById('public-mobile');
+    const settingsMb = document.getElementById('settings-mobile');
+
+    let state;
+    if (
+        tingkatPendidikan == undefined || mbNumber == "" || mbName == "" || mbDate == "" || mbMonth == "" || mbYear == "" || mbCcode == "" || mbCname == "" || mbMcode == "" || mbMname == ""
+    ) {
+        alert('Maaf terdapat kesalahan saat mengisi data!, Silahkan ulangi kembali')
+        state = false;
+
+    }else {
+
+        mNomorP.textContent = mbNumber;
+        mNamaP.textContent = mbName;
+
+
+
+        mTanggalP.textContent = mbDate + ' - ' + mbMonth[0].toUpperCase() + mbMonth.slice(1, blnLahir.length) + ' - ' + mbYear;
+
+        mNamaPt.textContent = mbCcode + ' - ' + mbCname;
+        mNamaPr.textContent = mbMcode + ' - ' + mbMname + '  (' + tingkatPendidikan + ')'
+
+        mbPublic.style.display = 'flex';
+        settingsMb.style.display = 'none';
+        state = true;
+        body.style.paddingTop = '16px';
+        body.style.paddingBottom = '16px';
+        body.style.paddingLeft = '16px';
+        body.style.paddingRight = '16px';
+        body.style.height = '100vh';
+        body.style.width = '100%';
+        body.style.overflow = 'hidden';
+        body.style.backgroundImage = 'none';
+        body.style.background='RGB(136, 159, 205)'
+        body.style.background='linear-gradient(90deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%)';
+
+    }
+
+    if (state) {
+        setTimeout(() => {
+            alert("NB : Untuk kembali ke section sebelumnya klik pada kotak berwana hijau dibagian paling bawah");
+        }, 3000);
+
+    } else {
+
+    }
+
+
+}
+
+const mbBack = document.getElementById('mb-button');
+
+mbBack.onclick = () => {
+    const body = document.body;
+    const mbPublic = document.getElementById('public-mobile');
+    const settingsMb = document.getElementById('settings-mobile');
+
+    mbPublic.style.display='none';
+    settingsMb.style.display='flex';
+    body.style.backgroundImage='url(/image/background.jpg)'
+    body.style.backgroundSize = 'cover';
+    body.style.backgroundRepeat ='no-repeat';
+    settingsMb.style.height='100vh'
+    body.style.padding='0px';
+}
+
+const mbReset = document.getElementById('mb-res-btn');
+
+mbReset.onclick = () => {
+    window.location.reload()
+}
