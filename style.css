@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* overflow: hidden; */
+    /* overflow-y: visible;
+    overflow-x: hidden; */
+
 }
 
 body {
@@ -11,11 +13,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; */
-    padding-top: 16px;
+    /* padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 16px;
-    padding-right: 16px;
-    height: 350vh;
+    padding-right: 16px; */
+    height: 100vh;
 
 }
 
@@ -28,11 +30,9 @@ body {
     padding: 12px;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 95vh;
+    width: calc(100vw - 32px);
+    height: calc(100vh - 32px);
     background-color: rgba(0, 0, 0, 0.58);
-
-
 }
 
 .settings h3 {
@@ -105,28 +105,25 @@ body {
     width: 100vw;
     font-family: 'Montserrat';
     background-color: #8DB3C6;
-    padding: 16px;
-    display: grid;
-    grid-template-rows: 1.5fr 0.8fr 4fr 1fr;
-    position: relative;
-    margin-top: -16px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
 }
 
 .logo {
-    width: 50%;
-    height: 100%;
+    width: calc(100vw-24px);
+    height: calc((100vh-24px)/4);
 }
 
 .logo img {
-    width: 30%;
-
-
+    width: 20%;
 }
 
 .judul {
     width: 100%;
-    height: 30px;
-    margin-top: 8px;
+    height: calc((100vh-24px)/8);
 }
 
 .judul h3 {
@@ -136,66 +133,68 @@ body {
 }
 
 .data {
-    display: grid;
-    grid-template-columns: 0.45fr 0.9fr;
-    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
     gap: 16px;
     align-items: center;
     justify-content: center;
-    height: 410px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 12px;
-    padding-right: 12px;
-
+    width: 100%;
+    height: calc((100vh-24px)/2);
 }
 
 .barcode {
-    width: 100%;
-    height: 100%;
-    background-color: green;
-    justify-content: center;
+    width: 33.3%;
+    height: calc(((100vh-24px)/2));
+    justify-content: start;
     align-items: center;
     display: flex;
 }
 
 .barcode img {
     width: 100%;
-    height: 100%;
     opacity: 1;
-    margin: 12px auto;
 }
 
 .div-biodata {
-    display: grid;
-    grid-template-rows: 2fr 0.5fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: start;
+    width: 66.6%;
+    height: 100%;
+}
+
+.table-tombol {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 32px;
     width: 100%;
     height: 100%;
 }
 
-table {
+
+.table {
     table-layout: fixed;
 }
 
 table td {
     color: white;
     font-family: 'Montserrat';
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
 }
 
 .pengumuman {
     width: 100%;
     height: 40px;
-    background-color: #5CB0CE;
+    background-color: rgb(59, 161, 183);
     justify-content: center;
     align-items: center;
     display: flex;
     margin-top: 0px;
     color: white;
-
     cursor: pointer;
 }
 
@@ -206,9 +205,7 @@ table td {
 }
 
 .button {
-    position: relative;
-    bottom: 0;
-    width: 304%;
+    width: 100%;
     height: 35px;
     display: flex;
     justify-content: center;
@@ -233,65 +230,168 @@ table td {
 #a {
     text-decoration: none;
     color: rgb(0, 102, 255);
-
 }
 
+/* ---------------------------PUBLIC END------------------------------------------- */
 
-/* -------------Public Mobile Break Point------------ */
+.public-mobile{
+    display: none;
+}
 
+/* -----------RESPONSIVE MOBILE BREAK POINT ---------*/
 @media (max-width: 576px) {
-    body{
+    .button:active {
+        background-color: red;
+    }
+    .settings{
+        display: none;
+    }
+    .public{
+        display: none;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* BUGFIX 1: overflow:hidden dihapus dari * karena menyebabkan konten biodata terpotong */
+    }
+
+    body {
         background-image: none;
         margin: 0;
         padding: 0;
         background: RGB(136, 159, 205);
         background: linear-gradient(90deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%);
-        height: 100vh;
+        min-height: 100vh;
         z-index: 10;
-
+        padding: 16px;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
     }
 
-    .public {
-        display: none;
-    }
 
     .public-mobile {
+        width: 100%;
         display: flex;
-        width: 100vw;
-        height: 100vh;
-        z-index: 999999999;
-        
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .public-mobile-logo{
-        display: flex;
+    .public-mobile-logo {
+        width: 100%;
     }
 
-    .public-mobile-logo img{
-        width: 50%;
-        height: 50%;
+    .public-mobile-logo img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .public-mobile-judul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .public-mobile-judul h3 {
+        text-align: center;
+        color: white;
+    }
+
+    .public-mobile-data {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .public-mobile-data-barcode {
+        background-color: transparent;
+        width: 100%;
+        height: auto;
+    }
+
+    .public-mobile-data-barcode img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .public-mobile-data-biodata {
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    #pb-mb-dt-bdt-ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        list-style: none;
+    }
+
+    .public-mobile-data-biodata li {
+        color: white;
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+
+    .public-mobile-data-biodata a {
+        color: #90caf9;
+    }
+
+
+    .unduh {
+        width: 100%;
+        height: auto;
+        background-color: #1a3560;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        padding: 2px 0;
+    }
+
+    .unduh p {
+        background-color: transparent;
+        color: white;
+        width: 100%;
+        text-align: center;
+        height: auto;
+        padding: 12px 8px;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+
+    .kembali {
+        width: 100%;
+        height: auto;
+        background-color: #4caf50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        padding: 2px 0;
+    }
+
+    .kembali p {
+        background-color: transparent;
+        color: white;
+        width: 100%;
+        text-align: center;
+        height: auto;
+        padding: 12px 8px;
+        font-size: 13px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ---------------------------PUBLIC END------------------------------------------- */

@@ -36,7 +36,7 @@ generate.onclick = () => {
     const pub_kodeNamaProdiTp = document.getElementById('pub-kodeNamaProdiTp');
 
     const public = document.getElementById('public');
-    const body = document.body;
+    const body = document.body
 
 
     let state;
@@ -47,6 +47,21 @@ generate.onclick = () => {
         alert('Maaf terdapat kesalahan saat mengisi data!, Silahkan ulangi kembali')
         state = false;
 
+    }else if (namaPeserta == "debugging"){
+        pub_nomorPeserta.textContent = nomorPeserta;
+        pub_namaPeserta.textContent = namaPeserta;
+        pub_tglPeserta.textContent = tglLahir + ' - ' + blnLahir[0].toUpperCase() + blnLahir.slice(1, blnLahir.length) + ' - ' + thnLahir;
+
+        pub_kodeNamaPTN.textContent = kodePTN + ' - ' + namaPTN;
+        pub_kodeNamaProdiTp.textContent = kodeProdi + ' - ' + namaProdi + '  (' + tingkatPendidikan + ')'
+
+        public.style.display = 'grid';
+        settings.style.display = 'none';
+        state = true;
+        body.style.paddinTop = '0';
+        body.style.paddingBottom = '0';
+        body.style.paddingLeft = '0';
+        body.style.paddingRight = '0';
     } else {
 
         pub_nomorPeserta.textContent = nomorPeserta;
@@ -63,6 +78,7 @@ generate.onclick = () => {
         body.style.paddingBottom = '0';
         body.style.paddingLeft = '0';
         body.style.paddingRight = '0';
+
     }
 
     if (state) {
