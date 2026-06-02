@@ -119,7 +119,7 @@ button.addEventListener('click', function () {
 
     body.style.display='flex';
     body.style.padding='16px'
-    body.style.backgroundImage='url(/image/background.jpg)'
+    body.style.backgroundImage='url(./image/background.jpg)'
     public.style.display = 'none';
     settings.style.display = 'flex';
     settings.style.background = 'rgba(0, 0, 0, 0.58)';
@@ -209,7 +209,7 @@ mbBack.onclick = () => {
 
     mbPublic.style.display='none';
     settingsMb.style.display='flex';
-    body.style.backgroundImage='url(/image/background.jpg)'
+    body.style.backgroundImage='url(./image/background.jpg)'
     body.style.backgroundSize = 'cover';
     body.style.backgroundRepeat ='no-repeat';
     settingsMb.style.height='100vh'
