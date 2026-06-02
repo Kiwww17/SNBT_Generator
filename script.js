@@ -176,11 +176,8 @@ generateMobile.onclick = () => {
         mbPublic.style.display = 'flex';
         settingsMb.style.display = 'none';
         state = true;
-        body.style.paddingTop = '16px';
-        body.style.paddingBottom = '16px';
-        body.style.paddingLeft = '16px';
-        body.style.paddingRight = '16px';
-        body.style.height = '';
+        body.style.padding = '16px';
+        body.style.height = '120vh';
         body.style.width = '100%';
         body.style.overflow = 'auto';
         body.style.backgroundImage = 'none';
@@ -214,7 +211,7 @@ mbBack.onclick = () => {
     body.style.backgroundRepeat ='no-repeat';
     settingsMb.style.height='100vh';
     body.style.padding='0px';
-    body.style.overflow = 'hidden';
+    body.style.overflow = 'auto';
 }
 
 const mbReset = document.getElementById('mb-res-btn');
