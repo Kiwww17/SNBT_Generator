@@ -182,7 +182,7 @@ generateMobile.onclick = () => {
         body.style.paddingRight = '16px';
         body.style.height = '';
         body.style.width = '100%';
-        body.style.overflow = 'hidden';
+        body.style.overflow = 'auto';
         body.style.backgroundImage = 'none';
         body.style.background='RGB(136, 159, 205)'
         body.style.background='linear-gradient(90deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%)';
@@ -212,8 +212,9 @@ mbBack.onclick = () => {
     body.style.backgroundImage='url(./image/background.jpg)'
     body.style.backgroundSize = 'cover';
     body.style.backgroundRepeat ='no-repeat';
-    settingsMb.style.height='100vh'
+    settingsMb.style.height='100vh';
     body.style.padding='0px';
+    body.style.overflow = 'hidden';
 }
 
 const mbReset = document.getElementById('mb-res-btn');
