@@ -27,83 +27,120 @@ generate.onclick = () => {
 
     let tingkatPendidikan = document.querySelector('input[name="Tingkat pendidikan"]:checked')?.value;
 
+    let keterangan = document.querySelector('input[name="keterangan"]:checked')?.value;
 
+    if (keterangan == 'lulus') {
+        const pub_nomorPeserta = document.getElementById('pub-nomorPeserta');
+        const pub_namaPeserta = document.getElementById('pub-namaPeserta');
+        const pub_tglPeserta = document.getElementById('pub-tglPeserta');
+        const pub_kodeNamaPTN = document.getElementById('pub-kodeNamaPTN');
+        const pub_kodeNamaProdiTp = document.getElementById('pub-kodeNamaProdiTp');
+
+        const public = document.getElementById('public');
+        const body = document.body
+
+        const backButton = document.getElementById('button');
+        let state;
+        const settings = document.getElementById('settings');
+        if (
+            tingkatPendidikan == undefined || nomorPeserta == "" || namaPeserta == "" || tglLahir == "" || blnLahir == "" || thnLahir == "" || kodePTN == "" || namaPTN == "" || kodeProdi == "" || namaProdi == ""
+        ) {
+            alert('Maaf terdapat kesalahan saat mengisi data!, Silahkan ulangi kembali')
+            state = false;
+
+        } else if (namaPeserta == "debugging") {
+            pub_nomorPeserta.textContent = nomorPeserta;
+            pub_namaPeserta.textContent = namaPeserta;
+            pub_tglPeserta.textContent = tglLahir + ' - ' + blnLahir[0].toUpperCase() + blnLahir.slice(1, blnLahir.length) + ' - ' + thnLahir;
+
+            pub_kodeNamaPTN.textContent = kodePTN + ' - ' + namaPTN;
+            pub_kodeNamaProdiTp.textContent = kodeProdi + ' - ' + namaProdi + '  (' + tingkatPendidikan + ')'
+
+            public.style.display = 'flex';
+            settings.style.display = 'none';
+            state = true;
+            body.style.paddingTop = '0';
+            body.style.paddingBottom = '0';
+            body.style.paddingLeft = '0';
+            body.style.paddingRight = '0';
+            body.style.height = '100vh';
+            body.style.width = '100%';
+            body.style.overflow = 'hidden';
+            body.style.backgroundImage = 'none';
+
+        } else {
+
+            pub_nomorPeserta.textContent = nomorPeserta;
+            pub_namaPeserta.textContent = namaPeserta;
+            pub_tglPeserta.textContent = tglLahir + ' - ' + blnLahir[0].toUpperCase() + blnLahir.slice(1, blnLahir.length) + ' - ' + thnLahir;
+
+            pub_kodeNamaPTN.textContent = kodePTN + ' - ' + namaPTN;
+            pub_kodeNamaProdiTp.textContent = kodeProdi + ' - ' + namaProdi + '  (' + tingkatPendidikan + ')'
+
+            public.style.display = 'flex';
+            public.style.height = '100%';
+            public.style.width = '100%';
+            settings.style.display = 'none';
+            state = true;
+            body.style.paddingTop = '0';
+            body.style.paddingBottom = '0';
+            body.style.paddingLeft = '0';
+            body.style.paddingRight = '0';
+            body.style.height = '100vh';
+            body.style.width = '100vw';
+            body.style.overflow = 'visible';
+            body.style.backgroundImage = 'none';
+            backButton.style.display = 'flex'
+
+        }
+
+        if (state) {
+            setTimeout(() => {
+                alert("NB : Untuk kembali ke section sebelumnya klik pada kotak berwana hijau dibagian paling bawah");
+            }, 3000);
+
+        } else {
+
+        }
+
+    }else if(keterangan == 'tidak lulus'){
+        const tidakLulus = document.getElementById('tidak-lolos-desktop')
+        const namaTidakLulus = document.getElementById('nama-tidak-lulus');
+        const nomorTidakLulus = document.getElementById('nomorTidakLulus');
+        const body = document.body;
+        
+
+        namaTidakLulus.textContent = namaPeserta
+        nomorTidakLulus.textContent = nomorPeserta
+        namaTidakLulus.style.fontWeight = 'bold'
+        nomorTidakLulus.style.fontWeight = 'bold'
+        tidakLulus.style.display = 'flex';
+        public.style.display = 'none';
+        settings.style.display = 'none';
+        body.style.backgroundImage = 'none';
+        body.style.background = 'RGB(136, 159, 205)'
+        body.style.background = 'linear-gradient(135deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%)';
+    }
     //////////-------------------------------------//////
-    const pub_nomorPeserta = document.getElementById('pub-nomorPeserta');
-    const pub_namaPeserta = document.getElementById('pub-namaPeserta');
-    const pub_tglPeserta = document.getElementById('pub-tglPeserta');
-    const pub_kodeNamaPTN = document.getElementById('pub-kodeNamaPTN');
-    const pub_kodeNamaProdiTp = document.getElementById('pub-kodeNamaProdiTp');
-
-    const public = document.getElementById('public');
-    const body = document.body
-
-    const backButton = document.getElementById('button');
-    let state;
-    const settings = document.getElementById('settings');
-    if (
-        tingkatPendidikan == undefined || nomorPeserta == "" || namaPeserta == "" || tglLahir == "" || blnLahir == "" || thnLahir == "" || kodePTN == "" || namaPTN == "" || kodeProdi == "" || namaProdi == ""
-    ) {
-        alert('Maaf terdapat kesalahan saat mengisi data!, Silahkan ulangi kembali')
-        state = false;
-
-    } else if (namaPeserta == "debugging") {
-        pub_nomorPeserta.textContent = nomorPeserta;
-        pub_namaPeserta.textContent = namaPeserta;
-        pub_tglPeserta.textContent = tglLahir + ' - ' + blnLahir[0].toUpperCase() + blnLahir.slice(1, blnLahir.length) + ' - ' + thnLahir;
-
-        pub_kodeNamaPTN.textContent = kodePTN + ' - ' + namaPTN;
-        pub_kodeNamaProdiTp.textContent = kodeProdi + ' - ' + namaProdi + '  (' + tingkatPendidikan + ')'
-
-        public.style.display = 'grid';
-        settings.style.display = 'none';
-        state = true;
-        body.style.paddingTop = '0';
-        body.style.paddingBottom = '0';
-        body.style.paddingLeft = '0';
-        body.style.paddingRight = '0';
-        body.style.height = '100vh';
-        body.style.width = '100%';
-        body.style.overflow = 'hidden';
-        body.style.backgroundImage = 'none';
-
-    } else {
-
-        pub_nomorPeserta.textContent = nomorPeserta;
-        pub_namaPeserta.textContent = namaPeserta;
-        pub_tglPeserta.textContent = tglLahir + ' - ' + blnLahir[0].toUpperCase() + blnLahir.slice(1, blnLahir.length) + ' - ' + thnLahir;
-
-        pub_kodeNamaPTN.textContent = kodePTN + ' - ' + namaPTN;
-        pub_kodeNamaProdiTp.textContent = kodeProdi + ' - ' + namaProdi + '  (' + tingkatPendidikan + ')'
-
-        public.style.display = 'flex';
-        public.style.height = '100%';
-        public.style.width = '100%';
-        settings.style.display = 'none';
-        state = true;
-        body.style.paddingTop = '0';
-        body.style.paddingBottom = '0';
-        body.style.paddingLeft = '0';
-        body.style.paddingRight = '0';
-        body.style.height = '100vh';
-        body.style.width = '100vw';
-        body.style.overflow = 'visible';
-        body.style.backgroundImage = 'none';
-        backButton.style.display = 'flex'
-
-    }
-
-    if (state) {
-        setTimeout(() => {
-            alert("NB : Untuk kembali ke section sebelumnya klik pada kotak berwana hijau dibagian paling bawah");
-        }, 3000);
-
-    } else {
-
-    }
 
 }
+const backDesktop = document.getElementById('back-desktop');
 
+backDesktop.onclick = () => {
+    const public = document.getElementById('public');
+    const settings = document.getElementById('settings');
+    const tidakLulus = document.getElementById('tidak-lolos-desktop')
+    const body = document.body
+
+    body.style.display = 'flex';
+    body.style.padding = '16px'
+    body.style.backgroundImage = 'url(./image/background.jpg)'
+    public.style.display = 'none';
+    settings.style.display = 'flex';
+    settings.style.background = 'rgba(0, 0, 0, 0.58)';
+    button.style.display = 'none';
+    tidakLulus.style.display = 'none';
+}
 const reset = document.getElementById('reset');
 
 reset.onclick = () => {
@@ -117,13 +154,13 @@ button.addEventListener('click', function () {
     const settings = document.getElementById('settings');
     const body = document.body
 
-    body.style.display='flex';
-    body.style.padding='16px'
-    body.style.backgroundImage='url(./image/background.jpg)'
+    body.style.display = 'flex';
+    body.style.padding = '16px'
+    body.style.backgroundImage = 'url(./image/background.jpg)'
     public.style.display = 'none';
     settings.style.display = 'flex';
     settings.style.background = 'rgba(0, 0, 0, 0.58)';
-    button.style.display='none';
+    button.style.display = 'none';
 })
 
 //-----------Mobile Generate------------------------//
@@ -143,7 +180,7 @@ generateMobile.onclick = () => {
     let tingkatPendidikan = document.querySelector('input[name="mbTingkat pendidikan"]:checked')?.value;
     const body = document.body;
     ///////////
-    
+
     //Out//
     const mNomorP = document.getElementById('mb-pub-nomorPeserta');
     const mNamaP = document.getElementById('mb-pub-namaPeserta');
@@ -161,7 +198,7 @@ generateMobile.onclick = () => {
         alert('Maaf terdapat kesalahan saat mengisi data!, Silahkan ulangi kembali')
         state = false;
 
-    }else {
+    } else {
 
         mNomorP.textContent = mbNumber;
         mNamaP.textContent = mbName;
@@ -181,8 +218,8 @@ generateMobile.onclick = () => {
         body.style.width = '100%';
         body.style.overflow = 'auto';
         body.style.backgroundImage = 'none';
-        body.style.background='RGB(136, 159, 205)'
-        body.style.background='linear-gradient(90deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%)';
+        body.style.background = 'RGB(136, 159, 205)'
+        body.style.background = 'linear-gradient(90deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%)';
 
     }
 
@@ -190,7 +227,7 @@ generateMobile.onclick = () => {
         setTimeout(() => {
             alert("NB : Untuk kembali ke section sebelumnya klik pada kotak berwana hijau dibagian paling bawah");
         }, 3000);
-    } else{
+    } else {
 
     }
 
@@ -204,13 +241,13 @@ mbBack.onclick = () => {
     const mbPublic = document.getElementById('public-mobile');
     const settingsMb = document.getElementById('settings-mobile');
 
-    mbPublic.style.display='none';
-    settingsMb.style.display='flex';
-    body.style.backgroundImage='url(./image/background.jpg)'
+    mbPublic.style.display = 'none';
+    settingsMb.style.display = 'flex';
+    body.style.backgroundImage = 'url(./image/background.jpg)'
     body.style.backgroundSize = 'cover';
-    body.style.backgroundRepeat ='no-repeat';
-    settingsMb.style.height='100vh';
-    body.style.padding='0px';
+    body.style.backgroundRepeat = 'no-repeat';
+    settingsMb.style.height = '100vh';
+    body.style.padding = '0px';
     body.style.overflow = 'auto';
 }
 
