@@ -219,6 +219,59 @@ table td {
     color: rgb(0, 102, 255);
 }
 
+/* tidak lolos desktop */
+.tidak-lolos-desktop{
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+.logo-desktop{
+    width: 100%;
+    height: auto;
+}
+
+.logo-desktop img {
+    width: 20%;
+}
+.keterangan-desktop{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.keterangan-desktop h2 {
+    text-align: center;
+    color: white;
+}
+
+.keterangan-desktop p{
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    width: 75%;
+}
+
+.back-desktop{
+    width: 100%;
+    height: 45px;
+    background-color: rgb(32, 159, 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+/* tidak lolos desktop end */
+
+
 /* ---------------------------PUBLIC END------------------------------------------- */
 
 .public-mobile{
