@@ -55,7 +55,7 @@ body {
     margin-left: -60px;
 }
 
-.form-keterangan-desktop{
+.form-keterangan-desktop {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,6 +65,7 @@ body {
 .form-keterangan-desktop label {
     margin-left: -60px;
 }
+
 .settings span {
     margin: 12px auto;
     padding: 4px;
@@ -88,6 +89,32 @@ body {
 
 .settings a {
     color: white;
+}
+
+.desktop-footer {
+    text-align: center;
+    font-weight: bold;
+    /* background-color: red; */
+}
+
+.desktop-footer a {
+    text-decoration: none;
+    transition: ease-in;
+
+
+}
+
+.desktop-footer a:hover {
+    color: #37AE36;
+    text-decoration: underline;
+
+}
+
+.desktop-footer span {
+    height: 2px;
+    width: 100px;
+    background-color: black;
+
 }
 
 /* -------------------------SETTINGS END --------------------------------------- */
@@ -230,7 +257,7 @@ table td {
 }
 
 /* tidak lolos desktop */
-.tidak-lolos-desktop{
+.tidak-lolos-desktop {
     width: 100%;
     height: 100%;
     padding: 16px;
@@ -240,7 +267,8 @@ table td {
     justify-content: space-between;
     gap: 32px;
 }
-.logo-desktop{
+
+.logo-desktop {
     width: 100%;
     height: auto;
 }
@@ -248,7 +276,8 @@ table td {
 .logo-desktop img {
     width: 20%;
 }
-.keterangan-desktop{
+
+.keterangan-desktop {
     display: flex;
     gap: 16px;
     flex-direction: column;
@@ -257,19 +286,20 @@ table td {
     justify-content: space-evenly;
     align-items: center;
 }
+
 .keterangan-desktop h2 {
     text-align: center;
     color: white;
 }
 
-.keterangan-desktop p{
+.keterangan-desktop p {
     text-align: center;
     color: white;
     font-size: 16px;
     width: 75%;
 }
 
-.back-desktop{
+.back-desktop {
     width: 100%;
     height: 45px;
     background-color: rgb(32, 159, 60);
@@ -280,21 +310,24 @@ table td {
     cursor: pointer;
 }
 
-.back-desktop:active{
+.back-desktop:active {
     background-color: red;
 }
+
 /* tidak lolos desktop end */
 
 
 /* ---------------------------PUBLIC END------------------------------------------- */
 
-.public-mobile{
+.public-mobile {
     display: none;
 }
 
-.settings-mobile{
+.settings-mobile {
     display: none;
 }
+
+
 /* -----------RESPONSIVE MOBILE BREAK POINT ---------*/
 @media (max-width: 576px) {
     * {
@@ -306,12 +339,12 @@ table td {
     body {
         margin: 0;
         padding: 0;
-        background-color: white ;
-        background-image:url(./image/background.jpg);
+        background-color: white;
+        background-image: url(./image/background.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        height: 100vh;
+        height: auto;
         z-index: 10;
         padding: 16px;
         width: 100vw;
@@ -325,26 +358,29 @@ table td {
     .button:active {
         background-color: red;
     }
-    .settings{
+
+    .settings {
         display: none;
     }
-    .public{
+
+    .public {
         display: none;
     }
 
     /* ---------------------------SETTINGS MOBILE -----------------------------------------------------*/
-    .settings-mobile{
+    .settings-mobile {
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
         width: 100%;
         height: 100vh;
-        justify-content: center;
+        justify-content: space-between;
         align-items: stretch;
         gap: 12px;
+        padding: 12px;
         font-family: 'Montserrat';
     }
 
-    .settings-mobile-data{
+    .settings-mobile-data {
         display: flex;
         width: 100%;
         justify-content: center;
@@ -352,63 +388,64 @@ table td {
         align-items: center;
     }
 
-    .settings-mobile-data h3{
+    .settings-mobile-data h3 {
         color: white;
         text-align: center;
 
     }
-    .settings-mobile-data ul{
+
+    .settings-mobile-data ul {
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap:8px;
+        gap: 8px;
         width: 100%;
         justify-content: center;
         align-items: center;
     }
 
-    .settings-mobile-data li{
+    .settings-mobile-data li {
         color: white;
         font-size: 14px;
         font-weight: bold;
     }
 
-    .settings-mobile-data input{
+    .settings-mobile-data input {
         max-width: 100%;
         width: 200px;
         border: none;
     }
 
-    .settings-mobile-button{
+    .settings-mobile-button {
         display: flex;
         width: 100%;
         justify-content: center;
     }
 
-    .settings-mobile-button ul{
+    .settings-mobile-button ul {
         list-style: none;
         display: flex;
         width: 100%;
-        justify-content: space-around;  
-        margin-top: 16px;      
+        justify-content: space-around;
+        margin-top: 16px;
     }
 
-    
-    #mb-gen-btn{
+
+    #mb-gen-btn {
         background-color: #37AE36;
         color: white;
         width: 80px;
         font-weight: bold;
     }
-    
-    #mb-res-btn{
+
+    #mb-res-btn {
         background-color: red;
         color: white;
         width: 80px;
         font-weight: bold;
     }
 
-    .mb-form{
+    .mb-form {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -419,23 +456,41 @@ table td {
     .mb-form p {
         font-weight: bold;
     }
-    .mb-form{
+
+    .mb-form {
         color: white;
     }
-    .footer{
+
+    .form-keterangan-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 45px;
+        color: white;
+    }
+
+    .form-keterangan-mobile label {
+        margin-left: -40px;
+    }
+
+    .footer {
         display: flex;
         width: 100%;
         justify-content: center;
         margin-top: 48px;
     }
 
-    .footer p, a {
+    .footer p,
+    a {
         color: white;
-        font-size: 21px;
+        font-size: 14px;
         text-decoration: none;
+        text-align: center;
     }
 
-    
+
+
+
 
 
     /*------------------------------------------- PUBLIC MOBILE ------------------------------- */
@@ -561,5 +616,67 @@ table td {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    /* Tidak lulus mobile */
+    .tidak-lolos-mobile {
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .logo-mobile {
+        width: 100%;
+        height: auto;
+    }
+
+    .logo-mobile img {
+        width: 100%;
+    }
+
+    .keterangan-mobile {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .keterangan-mobile h2 {
+        text-align: center;
+        color: white;
+        font-size: 1.3em;
+    }
+
+    .keterangan-mobile p {
+        text-align: center;
+        color: white;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .back-mobile {
+        width: 100%;
+        height: 45px;
+        background-color: rgb(32, 159, 60);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: pointer;
+    }
+
+    #nama-tidak-lulusMb{
+        text-transform: uppercase;
+    }
+    .back-mobile:active {
+        background-color: red;
     }
 }
