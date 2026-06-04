@@ -171,14 +171,17 @@ const generateMobile = document.getElementById('mb-gen-btn');
 generateMobile.onclick = () => {
     let mbNumber = document.getElementById('mb-no').value;
     let mbName = document.getElementById('mb-nm').value;
-    mbName.toUpperCase();
+    mbName = mbName.toUpperCase();
     let mbDate = document.getElementById('mb-dt').value;
     let mbMonth = document.getElementById('mb-mo').value;
+    mbMonth = mbMonth.slice(0, 1).toUpperCase() + mbMonth.slice(1, mbMonth.length);
     let mbYear = document.getElementById('mb-yr').value;
     let mbCcode = document.getElementById('mb-cc').value;
     let mbCname = document.getElementById('mb-cn').value;
+    mbCname = mbCname.toUpperCase();
     let mbMcode = document.getElementById('mb-mc').value;
     let mbMname = document.getElementById('mb-mn').value;
+    mbMname = mbMname.toUpperCase();
 
     const mbPublic = document.getElementById('public-mobile');
     const settingsMb = document.getElementById('settings-mobile');
