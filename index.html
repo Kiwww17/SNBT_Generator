@@ -74,8 +74,9 @@
         </span>
         <br>
         <br>
-        <footer>
-            <p><a href="https://github.com/Kiwww17">Follow github.com/Kiwww17</a></p>
+        <footer class="desktop-footer">
+            <p><a href="https://github.com/Kiwww17">Follow Me on Github!</a></p>
+            <span></span>
         </footer>
     </div>
     <!-- Desktop Settings End -->
@@ -209,6 +210,18 @@
             <label for="mb-sarjana"><input class="mb-inputSettings" type="radio" name="mbTingkat pendidikan" value="Sarjana" id="mb-sarjana">Sarjana</label>
             <label for="mb-sarjanaterapan"><input class="mb-inputSettings" type="radio" name="mbTingkat pendidikan" value="Sarjana Terapan" id="mb-sarjanaterapan">Sarjana Terapan</label>
         </form>
+
+        <!-- New -->
+        <form class="form-keterangan-mobile">
+            <p><b>Keterangan lulus/tidak lulus</b></p>
+            <br>
+            <input class="inputSettings" type="radio" name="keterangan" value="lulus" id="lulus"><label
+                for="lulus">Lulus</label>
+            <input class="inputSettings" type="radio" name="keterangan" value="tidak lulus"
+                id="tidakLulus"><label for="tidakLulus">Tidak lulus</label>
+        </form>
+        <!-- New -->
+
         <div class="settings-mobile-button">
             <ul>
                 <li><button id="mb-gen-btn">GENERATE</button></li>
@@ -216,7 +229,7 @@
             </ul>
         </div>
         <div class="footer">
-            <p><b>FOLLOW <a href="https://github.com/Kiwww17">github.com/Kiwww17</a></b></p>
+            <p><b><a href="https://github.com/Kiwww17">Follow Me on Github!</a></b></p>
         </div>
     </div>
     <!-- Mobile Settings End -->
@@ -315,37 +328,22 @@
     </div>
     <!-- Tidak Lolos Desktop End-->
 
+    <!-- Tidak Lulus Mobile -->
+    <div class="tidak-lolos-mobile" id="tidak-lolos-mobile">
+        <div class="logo-mobile">
+            <img src="./image/logo-snpmb.png" alt="logo">
+        </div>
+        <div class="keterangan-mobile">
+            <h2 >PENGUMUMAN HASIL SELEKSI SNBT SNPMB 2026</h2>
+            <p>PESERTA ATAS NAMA <span id="nama-tidak-lulusMb">LOREM IPSUM</span> DENGAN NOMOR PESERTA <span id="nomorTidakLulusMb">25-0999-123456</span> dinyatakan <b>TIDAK LULUS</b> SELEKSI SNBT SNPMB 2026.</p>
+            <h2>JANGAN PUTUS ASA DAN TETAP SEMANGAT!</h2>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="back-mobile" id="back-mobile">
+            <p><b>Kembali ke pencarian</b></p>
+        </div>
+    </div>
+    <!-- Tidak Lulus Mobile -->
     <script src="script.js"></script>
 </body>
 
