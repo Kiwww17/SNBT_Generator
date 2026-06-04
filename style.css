@@ -314,6 +314,14 @@ table td {
     background-color: red;
 }
 
+.tidak-lolos-mobile {
+    display: none;
+}
+
+.tidak-lolos-desktop {
+    display: none;
+}
+
 /* tidak lolos desktop end */
 
 
@@ -366,6 +374,7 @@ table td {
     .public {
         display: none;
     }
+
 
     /* ---------------------------SETTINGS MOBILE -----------------------------------------------------*/
     .settings-mobile {
@@ -673,9 +682,10 @@ table td {
         cursor: pointer;
     }
 
-    #nama-tidak-lulusMb{
+    #nama-tidak-lulusMb {
         text-transform: uppercase;
     }
+
     .back-mobile:active {
         background-color: red;
     }
