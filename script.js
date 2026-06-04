@@ -103,12 +103,12 @@ generate.onclick = () => {
 
         }
 
-    }else if(keterangan == 'tidak lulus'){
+    } else if (keterangan == 'tidak lulus') {
         const tidakLulus = document.getElementById('tidak-lolos-desktop')
         const namaTidakLulus = document.getElementById('nama-tidak-lulus');
         const nomorTidakLulus = document.getElementById('nomorTidakLulus');
         const body = document.body;
-        
+
 
         namaTidakLulus.textContent = namaPeserta
         nomorTidakLulus.textContent = nomorPeserta
@@ -120,6 +120,8 @@ generate.onclick = () => {
         body.style.backgroundImage = 'none';
         body.style.background = 'RGB(136, 159, 205)'
         body.style.background = 'linear-gradient(135deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%)';
+    }else{
+        alert('pilih ketrangan lulus!')
     }
     //////////-------------------------------------//////
 
@@ -169,6 +171,7 @@ const generateMobile = document.getElementById('mb-gen-btn');
 generateMobile.onclick = () => {
     let mbNumber = document.getElementById('mb-no').value;
     let mbName = document.getElementById('mb-nm').value;
+    mbName.toUpperCase();
     let mbDate = document.getElementById('mb-dt').value;
     let mbMonth = document.getElementById('mb-mo').value;
     let mbYear = document.getElementById('mb-yr').value;
@@ -177,61 +180,108 @@ generateMobile.onclick = () => {
     let mbMcode = document.getElementById('mb-mc').value;
     let mbMname = document.getElementById('mb-mn').value;
 
+    const mbPublic = document.getElementById('public-mobile');
+    const settingsMb = document.getElementById('settings-mobile');
+    const tidakLulusMb = document.getElementsByName('tidak-lolos-mobile');
     let tingkatPendidikan = document.querySelector('input[name="mbTingkat pendidikan"]:checked')?.value;
     const body = document.body;
     ///////////
+    let keterangan = document.querySelector('input[name="keterangan"]:checked')?.value;
 
-    //Out//
-    const mNomorP = document.getElementById('mb-pub-nomorPeserta');
-    const mNamaP = document.getElementById('mb-pub-namaPeserta');
-    const mTanggalP = document.getElementById('mb-pub-tglPeserta');
-    const mNamaPt = document.getElementById('mb-pub-kodeNamaPTN');
-    const mNamaPr = document.getElementById('mb-pub-kodeNamaProdiTp');
+    if (keterangan == 'lulus') {
+        const mNomorP = document.getElementById('mb-pub-nomorPeserta');
+        const mNamaP = document.getElementById('mb-pub-namaPeserta');
+        const mTanggalP = document.getElementById('mb-pub-tglPeserta');
+        const mNamaPt = document.getElementById('mb-pub-kodeNamaPTN');
+        const mNamaPr = document.getElementById('mb-pub-kodeNamaProdiTp');
 
-    const mbPublic = document.getElementById('public-mobile');
-    const settingsMb = document.getElementById('settings-mobile');
+        // const mbPublic = document.getElementById('public-mobile');
+        // const settingsMb = document.getElementById('settings-mobile');
 
-    let state;
-    if (
-        tingkatPendidikan == undefined || mbNumber == "" || mbName == "" || mbDate == "" || mbMonth == "" || mbYear == "" || mbCcode == "" || mbCname == "" || mbMcode == "" || mbMname == ""
-    ) {
-        alert('Maaf terdapat kesalahan saat mengisi data!, Silahkan ulangi kembali')
-        state = false;
+        let state;
+        if (
+            tingkatPendidikan == undefined || mbNumber == "" || mbName == "" || mbDate == "" || mbMonth == "" || mbYear == "" || mbCcode == "" || mbCname == "" || mbMcode == "" || mbMname == ""
+        ) {
+            alert('Maaf terdapat kesalahan saat mengisi data!, Silahkan ulangi kembali')
+            state = false;
 
-    } else {
+        } else {
 
-        mNomorP.textContent = mbNumber;
-        mNamaP.textContent = mbName;
+            mNomorP.textContent = mbNumber;
+            mNamaP.textContent = mbName;
 
 
 
-        mTanggalP.textContent = mbDate + ' - ' + mbMonth[0].toUpperCase() + mbMonth.slice(1, blnLahir.length) + ' - ' + mbYear;
+            mTanggalP.textContent = mbDate + ' - ' + mbMonth[0].toUpperCase() + mbMonth.slice(1, blnLahir.length) + ' - ' + mbYear;
 
-        mNamaPt.textContent = mbCcode + ' - ' + mbCname;
-        mNamaPr.textContent = mbMcode + ' - ' + mbMname + '  (' + tingkatPendidikan + ')'
+            mNamaPt.textContent = mbCcode + ' - ' + mbCname;
+            mNamaPr.textContent = mbMcode + ' - ' + mbMname + '  (' + tingkatPendidikan + ')'
 
-        mbPublic.style.display = 'flex';
-        settingsMb.style.display = 'none';
-        state = true;
-        body.style.padding = '16px';
-        body.style.height = '120vh';
-        body.style.width = '100%';
-        body.style.overflow = 'auto';
+            mbPublic.style.display = 'flex';
+            settingsMb.style.display = 'none';
+            state = true;
+            body.style.padding = '16px';
+            body.style.height = '120vh';
+            body.style.width = '100%';
+            body.style.overflow = 'auto';
+            body.style.backgroundImage = 'none';
+            body.style.background = 'RGB(136, 159, 205)'
+            body.style.background = 'linear-gradient(90deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%)';
+
+        }
+
+        if (state) {
+            setTimeout(() => {
+                alert("NB : Untuk kembali ke section sebelumnya klik pada kotak berwana hijau dibagian paling bawah");
+            }, 3000);
+        } else {
+
+        }
+    } else if (keterangan == 'tidak lulus') {
+
+
+        const tidakLulusMb = document.getElementById('tidak-lolos-mobile')
+        const namaTidakLulusMb = document.getElementById('nama-tidak-lulusMb');
+        const nomorTidakLulusMb = document.getElementById('nomorTidakLulusMb');
+        const public = document.getElementById('public');
+        const settings = document.getElementById('settings');
+        
+        const body = document.body;
+
+
+        namaTidakLulusMb.textContent = mbName
+        nomorTidakLulusMb.textContent =mbNumber
+        namaTidakLulusMb.style.fontWeight = 'bold'
+        nomorTidakLulusMb.style.fontWeight = 'bold'
+        tidakLulusMb.style.display = 'flex';
+        public.style.display = 'none';
+        settings.style.display = 'none';
         body.style.backgroundImage = 'none';
         body.style.background = 'RGB(136, 159, 205)'
-        body.style.background = 'linear-gradient(90deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%)';
+        body.style.background = 'linear-gradient(135deg, rgba(136, 159, 205, 1) 31%, rgba(121, 191, 201, 1) 71%)';
+        body.style.height = '70vh';
 
+        mbPublic.style.display = 'none';
+        settingsMb.style.display = 'none';
+        tidakLulusMb.style.display = 'flex';
+
+    }else{
+        alert('pilih ketrangan lulus!')
     }
+}
 
-    if (state) {
-        setTimeout(() => {
-            alert("NB : Untuk kembali ke section sebelumnya klik pada kotak berwana hijau dibagian paling bawah");
-        }, 3000);
-    } else {
+const backMobile = document.getElementById('back-mobile');
 
-    }
-
-
+backMobile.onclick = () => {
+    const tidakLulusMb = document.getElementById('tidak-lolos-mobile')
+    const settingsMb = document.getElementById('settings-mobile');
+    const body = document.body;
+    tidakLulusMb.style.display = 'none';
+    settingsMb.style.display = 'flex';
+    body.style.backgroundImage = 'url(./image/background.jpg';
+    body.style.backgroundRepeat = 'none'
+    body.style.backgroundSize ='cover'
+    body.style.backgroundPosition = 'center'
 }
 
 const mbBack = document.getElementById('mb-button');
